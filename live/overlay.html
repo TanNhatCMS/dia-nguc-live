@@ -92,7 +92,7 @@ addEventListener('resize', fit); fit();
 const A = {};
 const IMG = { hall:'/assets/hall.jpg', monk:'/assets/c_monk.png', nun:'/assets/c_nun.png', granny:'/assets/c_granny.png', man:'/assets/c_man.png',
   woman:'/assets/c_woman.png', child:'/assets/c_child.png', anim_man:'/assets/anim_man.png', anim_woman:'/assets/anim_woman.png', anim_granny:'/assets/anim_granny.png', anim_child:'/assets/anim_child.png', anim_nun:'/assets/anim_nun.png', anim_monk:'/assets/anim_monk.png', anim_master:'/assets/anim_master.png',
-  lotus:'/assets/fx_lotus.png', halo:'/assets/fx_halo.png', bell:'/assets/fx_bell.png', incense:'/assets/fx_incense.png', petal:'/assets/fx_petal.png', official:'/assets/c_official.png', idle_monk:'/assets/idle_monk.png', idle_official:'/assets/idle_official.png' };
+  lotus:'/assets/fx_lotus.png', halo:'/assets/fx_halo.png', bell:'/assets/fx_bell.png', incense:'/assets/fx_incense.png', petal:'/assets/fx_petal.png', official:'/assets/c_official.png', idle_monk:'/assets/idle_monk.png', idle_official:'/assets/idle_official.png', anim_petal:'/assets/anim_petal.png' };
 for (const [k,src] of Object.entries(IMG)){ const im=new Image(); im.src=src; A[k]=im; }
 const ANIM = { man:{fw:212,fh:300,seatH:210}, woman:{fw:212,fh:300,seatH:220}, granny:{fw:195,fh:300,seatH:222}, child:{fw:200,fh:300,seatH:210}, nun:{fw:212,fh:300,seatH:220}, monk:{fw:212,fh:300,seatH:210}, master:{fw:212,fh:300,seatH:210} };
 const hasAnim = k => ANIM[k] && A['anim_'+k]?.naturalWidth > 0;
@@ -316,7 +316,7 @@ function frame(now){
     ctx.save(); ctx.globalAlpha=k<.75?1:(1-k)/.25; sprite(A[f.kind],f.x,f.y-k*170,f.scale*(.6+.4*pop)); ctx.restore(); }
   for (let i=petals.length-1;i>=0;i--){ const p=petals[i]; p.t+=dt; if(p.t>p.life){ petals.splice(i,1); continue; } p.x+=p.vx*dt+Math.sin(p.t*3+i)*20*dt; p.y+=p.vy*dt;
     ctx.save(); ctx.globalAlpha=Math.min(1,p.life-p.t); ctx.translate(p.x,p.y);
-    if (p.heart){ ctx.fillStyle='#ff5a7a'; ctx.font='34px serif'; ctx.textAlign='center'; ctx.fillText('♥',0,0); } else { ctx.rotate(Math.sin(p.t*2+i)*.6); sprite(A.petal,0,0,p.s,.5); }
+    if (p.heart){ ctx.fillStyle='#ff5a7a'; ctx.font='34px serif'; ctx.textAlign='center'; ctx.fillText('♥',0,0); } else { ctx.rotate(Math.sin(p.t*2+i)*.6); if (A.anim_petal?.naturalWidth){ const fr=Math.floor(p.t*10+i)%4, sz=220*p.s; ctx.drawImage(A.anim_petal, fr*220, 0, 220, 220, -sz/2, -sz/2, sz, sz); } else sprite(A.petal,0,0,p.s,.5); }
     ctx.restore(); }
 }
 /* lantern ambience: every few minutes the hall lanterns brighten for a moment */
