@@ -9,7 +9,7 @@ Người xem bình luận là bước vào điện, ngồi ghế xét xử, sám
 - Từ đổi skin đổi thành: diêm, phán, mạnh, tiểu quỷ, quỷ sai, nữ quỷ, nam quỷ.
 - Quà đổi thành: Huyết Hoa, Đèn Địa Ngục, Trống Địa Ngục.
 - Bảng Công Đức đổi thành Sổ Nghiệp.
-- Asset vẽ lại bằng công cụ tạo ảnh (nền điện, Diêm Vương, hồn nam, hồn nữ), không dùng ảnh chánh điện gốc. Các skin còn lại dùng lại 3 hình này (nun dùng hồn nữ, granny dùng hồn nam, child dùng hồn nữ). Dải đi bộ anim_* đã gỡ, nhân vật xuất hiện tại chỗ thay vì đi bộ. Nhạc thiền gốc đã gỡ, bản này chưa có nhạc nền riêng — thay file trong `assets/music/` hoặc tắt nhạc ở bảng điều khiển.
+- Asset vẽ lại bằng công cụ tạo ảnh (nền điện, Diêm Vương, hồn nam, hồn nữ), không dùng ảnh chánh điện gốc. Đủ 6 skin riêng: Diêm Vương, hồn nam, hồn nữ, Quỷ Sai già, Mạnh Bà, Tiểu Quỷ. Icon lửa (fx_lotus, fx_petal) cũng vẽ bằng công cụ ảnh. Dải đi bộ anim_* đã gỡ, nhân vật xuất hiện tại chỗ thay vì đi bộ. Nhạc thiền gốc đã gỡ, bản này chưa có nhạc nền riêng — thay file trong `assets/music/` hoặc tắt nhạc ở bảng điều khiển.
 - Cơ chế giữ nguyên bản gốc: tối đa 100 chỗ, chỗ tự mở rộng 24 → 36 → 64 → 100, server chỉ nghe 127.0.0.1, WebSocket chỉ nhận Origin localhost, file tĩnh có danh sách trắng, không dùng tài khoản TikTok.
 
 ## Chạy bộ LIVE
