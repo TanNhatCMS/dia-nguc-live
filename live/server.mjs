@@ -41,7 +41,7 @@ function addLog(s){ const line = `[${new Date().toLocaleTimeString('vi-VN')}] ${
 const CAPS = [24, 36, 64, 100];
 function capacity(){ if (settings.seatMode !== 'auto') return +settings.seatMode; const n = viewers.size; return CAPS.find(c => n <= c) || 100; }
 
-/* skins: sprites that exist in /assets. Walking strips exist for all 6 viewer skins: man / woman / granny / nun / monk / child. */
+/* skins: sprites that exist in /assets. Walking strips exist for all 7 viewer skins: man / woman / granny / nun / monk / child / master (master reuses the monk strip). */
 // A comment changes the outfit only when it IS the keyword (≤ 3 words), so a long phrase never reads as a skin keyword.
 const SKIN_WORDS = [
   ['master', ['diêm','diem','diêm vương','diem vuong']], ['monk', ['phán','phan','phán quan','phan quan']], ['nun', ['mạnh','manh','mạnh bà','manh ba']],
