@@ -1,5 +1,7 @@
 # Diêm La Điện
 
+![Diêm La Điện](assets/logo.png)
+
 Địa ngục điện online 2.5D cho TikTok LIVE, fork từ Chánh Điện Online của Kent Juno (MIT).
 Người xem bình luận là bước vào điện, ngồi ghế xét xử, sám hối. Ai tặng quà sẽ được xướng tên xét nghiệp bằng giọng đọc tiếng Việt.
 

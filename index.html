@@ -134,7 +134,7 @@ const A = {};   // loaded images
 const ASSETS = {
   hall:'assets/hall.jpg',
   monk:'assets/c_monk.png', nun:'assets/c_nun.png', granny:'assets/c_granny.png', man:'assets/c_man.png', woman:'assets/c_woman.png', child:'assets/c_child.png',
-  anim_man:'assets/anim_man.png', anim_woman:'assets/anim_woman.png', anim_granny:'assets/anim_granny.png', anim_child:'assets/anim_child.png',
+  anim_man:'assets/anim_man.png', anim_woman:'assets/anim_woman.png', anim_granny:'assets/anim_granny.png', anim_child:'assets/anim_child.png', anim_nun:'assets/anim_nun.png', anim_monk:'assets/anim_monk.png',
   lotus:'assets/fx_lotus.png', halo:'assets/fx_halo.png', bell:'assets/fx_bell.png', incense:'assets/fx_incense.png', petal:'assets/fx_petal.png', mo:'assets/fx_mo.png', banner:'assets/fx_banner.png', scroll:'assets/fx_scroll.png',
 };
 let loaded = 0; const total = Object.keys(ASSETS).length;
@@ -142,7 +142,7 @@ for (const [k,src] of Object.entries(ASSETS)) { const im = new Image(); im.onloa
 
 /* ---- walk / sit-down sprite strips (8 frames: 0-3 walk from behind, 4-7 sitting down onto the cushion) ----
    seatH = height of the seated frame incl. cushion, used to match the static seated sprites (260px). */
-const ANIM = { man:{fw:212,fh:300,seatH:210}, woman:{fw:212,fh:300,seatH:220}, granny:{fw:195,fh:300,seatH:222}, child:{fw:200,fh:300,seatH:210} };
+const ANIM = { man:{fw:212,fh:300,seatH:210}, woman:{fw:212,fh:300,seatH:220}, granny:{fw:195,fh:300,seatH:222}, child:{fw:200,fh:300,seatH:210}, nun:{fw:212,fh:300,seatH:220}, monk:{fw:212,fh:300,seatH:210} };
 const hasAnim = k => ANIM[k] && A['anim_'+k] && A['anim_'+k].naturalWidth > 0;
 
 /* ---- floor layout: the painting's cushions sit on a perspective floor from y≈1180 (back) to y≈1850 (front).
