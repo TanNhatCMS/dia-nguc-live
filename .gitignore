@@ -1,0 +1,4 @@
+node_modules/
+live/tts/
+data/
+.DS_Store
