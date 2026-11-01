@@ -92,7 +92,7 @@ addEventListener('resize', fit); fit();
 const A = {};
 const IMG = { hall:'/assets/hall.jpg', monk:'/assets/c_monk.png', nun:'/assets/c_nun.png', granny:'/assets/c_granny.png', man:'/assets/c_man.png',
   woman:'/assets/c_woman.png', child:'/assets/c_child.png', anim_man:'/assets/anim_man.png', anim_woman:'/assets/anim_woman.png', anim_granny:'/assets/anim_granny.png',
-  lotus:'/assets/fx_lotus.png', halo:'/assets/fx_halo.png', bell:'/assets/fx_bell.png', incense:'/assets/fx_incense.png', petal:'/assets/fx_petal.png' };
+  lotus:'/assets/fx_lotus.png', halo:'/assets/fx_halo.png', bell:'/assets/fx_bell.png', incense:'/assets/fx_incense.png', petal:'/assets/fx_petal.png', official:'/assets/c_official.png' };
 for (const [k,src] of Object.entries(IMG)){ const im=new Image(); im.src=src; A[k]=im; }
 const ANIM = { man:{fw:212,fh:300,seatH:210}, woman:{fw:212,fh:300,seatH:220}, granny:{fw:195,fh:300,seatH:222} };
 const hasAnim = k => ANIM[k] && A['anim_'+k]?.naturalWidth > 0;
@@ -130,7 +130,7 @@ function reseat(){
 document.getElementById('count').textContent = '0/24';
 
 /* the three fixed teachers in front of the altar */
-const TEACHERS = [ { name:'Phán Quan Trái', skin:'monk', x:300, y:1085, s:.36 }, { name:'Diêm Vương', skin:'monk', x:540, y:1100, s:.4, master:true }, { name:'Phán Quan Phải', skin:'monk', x:780, y:1085, s:.36 } ];
+const TEACHERS = [ { name:'Phán Quan Trái', skin:'official', x:300, y:1085, s:.36 }, { name:'Diêm Vương', skin:'monk', x:540, y:1100, s:.4, master:true }, { name:'Phán Quan Phải', skin:'official', x:780, y:1085, s:.36 } ];
 
 function addVisitor(p, instant){
   if (visitors.has(p.id)) { Object.assign(visitors.get(p.id), { name:p.name, skin:p.skin, avatar:p.avatar, coins:p.coins }); return; }
